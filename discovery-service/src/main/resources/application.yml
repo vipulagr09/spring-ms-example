@@ -1,11 +1,17 @@
-server:
-  port: ${PORT:8761}
+#server:
+  #port: ${PORT:8761}
 
-eureka:
-  instance:
-    hostname: localhost
-  client:
-    registerWithEureka: false
-    fetchRegistry: false
-  server:
-    enableSelfPreservation: false
+#eureka:
+  #instance:
+    #hostname: localhost
+  #client:
+    #registerWithEureka: false
+    #fetchRegistry: false
+  #server:
+    #enableSelfPreservation: false
+
+spring:
+  application:
+    name: discovery-service
+  config:
+    import: "optional:configserver:http://localhost:8088"
